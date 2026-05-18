@@ -1,0 +1,8 @@
+warehouse:
+  type: "sqlite"
+  sqlite_path: "demo/demo.db"
+  # type: trino | snowflake | bigquery | postgres
+  # host: ""
+  # port: 8080
+  # catalog: ""
+  # schema: ""

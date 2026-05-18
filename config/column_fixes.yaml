@@ -1,0 +1,6 @@
+# Known LLM column misnames and their corrections.
+replacements:
+  timestamp: event_date
+  processing_time: duration_seconds
+  result: status
+  user_name: user_id

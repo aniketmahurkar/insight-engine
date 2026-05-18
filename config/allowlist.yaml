@@ -1,0 +1,4 @@
+tables:
+  - events
+  - users
+  - metrics

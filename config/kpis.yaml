@@ -1,0 +1,20 @@
+kpis:
+  - name: "Transaction Volume"
+    code: "VOL"
+    daily_sql: "SELECT event_date, COUNT(*) as val FROM events WHERE event_date BETWEEN date('now', '-{lookback} days') AND date('now', '-{offset} days') GROUP BY event_date"
+    date_field: "event_date"
+
+  - name: "Average Processing Time"
+    code: "APT"
+    daily_sql: "SELECT event_date, AVG(duration_seconds) as val FROM events WHERE event_date BETWEEN date('now', '-{lookback} days') AND date('now', '-{offset} days') AND duration_seconds > 0 GROUP BY event_date"
+    date_field: "event_date"
+
+  - name: "Success Rate"
+    code: "SR"
+    daily_sql: "SELECT event_date, AVG(CASE WHEN status = 'success' THEN 1.0 ELSE 0.0 END) as val FROM events WHERE event_date BETWEEN date('now', '-{lookback} days') AND date('now', '-{offset} days') GROUP BY event_date"
+    date_field: "event_date"
+
+  - name: "Error Rate"
+    code: "ERR"
+    daily_sql: "SELECT event_date, AVG(CASE WHEN status = 'error' THEN 1.0 ELSE 0.0 END) as val FROM events WHERE event_date BETWEEN date('now', '-{lookback} days') AND date('now', '-{offset} days') GROUP BY event_date"
+    date_field: "event_date"

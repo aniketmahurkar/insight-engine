@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+demo/demo.db
+reports/*.md
+reports/*.pdf

@@ -1,0 +1,8 @@
+columns:
+  - email
+  - phone
+  - ssn
+  - address
+  - credit_card
+  - full_name
+  - ip_address
